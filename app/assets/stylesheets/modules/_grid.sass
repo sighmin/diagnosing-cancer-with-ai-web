@@ -1,0 +1,16 @@
+=grid-block
+  min-height: 1px
+  position: relative
+  @if $visual-grid
+    border: 1px solid red
+
+.grid--gutter
+  +outer-container
+  +grid-block
+
+@for $x from 1 through 12
+  .grid--#{$x}of12
+    +span-columns($x)
+
+.row
+  +row

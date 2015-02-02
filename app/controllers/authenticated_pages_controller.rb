@@ -1,0 +1,3 @@
+class AuthenticatedPagesController < AuthenticatedController
+
+end

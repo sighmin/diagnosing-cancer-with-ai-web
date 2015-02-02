@@ -6,9 +6,12 @@ gem 'rails', '4.2.0'
 gem 'foreman'
 gem 'pg'
 gem 'thin'
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', github: 'rails/sass-rails' # Use sass-rails master until Sass 3.3 is supported: https://github.com/rails/sass-rails/pull/192
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
+gem 'slim'
+gem 'bourbon'
+gem 'neat'
 
 gem 'jquery-rails'
 gem 'turbolinks'

@@ -1,0 +1,31 @@
+body
+  background-color: $flat-clouds
+
+// Content span 10 columns
+.row
+  .content
+    +shift(1)
+    +span-columns(10)
+
+// Dividers
+.divider
+  height: 20px
+  &--blue
+    background-color: $flat-belize-hole
+  &--yellow
+    background-color: $flat-sunflower
+
+// Header
+.main-header
+  @if $visual-grid
+    border: solid black 1px
+  background-color: $flat-clouds
+  .content
+    h1
+      margin: rem(80) 0
+      font-size: rem(80)
+      font-weight: 300
+
+.explanation
+  .blurb
+    margin: rem(50) 0
