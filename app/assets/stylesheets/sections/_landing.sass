@@ -1,9 +1,15 @@
 body
   background-color: $flat-clouds
+h1, h2, h3, h4, h5, h6, p
+  // IS THIS DOING IT FOR YOU SIMON?
+  font-weight: 300
+p
+  font-size: rem(24)
 
 // Content span 10 columns
 .row
   .content
+    margin: rem(50) 0
     +shift(1)
     +span-columns(10)
 
@@ -11,21 +17,67 @@ body
 .divider
   height: 20px
   &--blue
-    background-color: $flat-belize-hole
-  &--yellow
+    background-color: $flat-peter-river
+  &--sunflower
     background-color: $flat-sunflower
+  &--carrot
+    background-color: $flat-carrot
+  &--alizarin
+    background-color: $flat-alizarin
+  &--amethyst
+    background-color: $flat-amethyst
+  &--emerald
+    background-color: $flat-emerald
 
 // Header
 .main-header
   @if $visual-grid
     border: solid black 1px
-  background-color: $flat-clouds
   .content
     h1
       margin: rem(80) 0
-      font-size: rem(80)
-      font-weight: 300
+      font-size: rem(79)
 
+// Explanation
 .explanation
-  .blurb
-    margin: rem(50) 0
+  p
+    font-size: rem(24)
+  .image-sidebar
+    +span-columns(3 of 10)
+  .explanation-section
+    +span-columns(7 of 10)
+    padding-top: rem(15)
+  .content-right
+    p
+      padding-left: rem(50)
+    img
+      float: right
+
+  .content-left
+    p
+      padding-right: rem(50)
+
+
+// Steps
+.steps
+  .step-header
+    h1
+      font-size: rem(40)
+      font-weight: 300
+  .step-content
+    button
+      margin-right: rem(16)
+
+
+
+// Footer
+.main-footer
+  .footer-left
+    +span-columns(3 of 10)
+    h1
+      font-size: rem(40)
+      font-weight: 300
+  .footer-right
+    +span-columns(7 of 10)
+    p
+      font-size: rem(16)

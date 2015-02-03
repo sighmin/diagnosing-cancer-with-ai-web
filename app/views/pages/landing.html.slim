@@ -1,20 +1,88 @@
-/ Header?
+/ Header
 .row.main-header
   .grid--gutter
     .content
       h1 Diagnosing Cancer with AI
-.row.divider.divider--yellow
 
-/ Actions?
-- 5.times do
-  .row.explanation
-    .grid--gutter
-      .content
-        p.blurb At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
-  .row.divider.divider--blue
+.row.divider.divider--sunflower
 
-/ Footer?
+
+/ Actions
 .row.explanation
   .grid--gutter
     .content
-      p.blurb At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+      .image-sidebar.content-left
+        = image_tag 'icon-nn.png'
+      .explanation-section.content-right
+        p Neural networks are mathematical models of the biological neuron. They have the ability to appoximate functional mappings from sample data (to put them mildy).
+  .grid--gutter
+    .content
+      .explanation-section.content-left
+        p Ruby is an object oriented, functionally inspired, beautiful programming language. I used it to build the models because it's so simple to read, not because it's a practical choice for production.
+      .image-sidebar.content-right
+        = image_tag 'icon-ruby.png'
+
+
+/ Steps
+.row.divider.divider--carrot
+
+.row.steps
+  .grid--gutter
+    .content
+      .step-header
+        h1 Step 1: Data data data
+      .step-content
+        p The first thing you need for machine learning is a data set. The data set I used can be found <a href="">here</a> on the popular UCI machine learning repository. The data consists of a set of measurements of digital images of various peoples breast tissue. A digital image is taken of an FNA (fine needle aspirate) and various measurements taken of the cells. Once you have the data, you split it into a training set (~60%) and a generalization set (~40%).
+
+.row.divider.divider--alizarin
+
+.row.steps
+  .grid--gutter
+    .content
+      .step-header
+        h1 Step 2: Training
+      .step-content
+        p The training set is used along with a training algorithm in order to correct the neural networks classification during training, optimizing it to learn to classify the mass as either Malignant or Benign. I'm training the neural network with a particle swarm optimizer, a clever global search algorithm.
+        p Let us train the network now...
+        button Train
+        br
+
+.row.divider.divider--amethyst
+
+.row.steps
+  .grid--gutter
+    .content
+      .step-header
+        h1 Step 3: Evaluation
+      .step-content
+        p Once the training is complete it will show the trained networks average classification accuracy. This may vary greatly because I have not tweaked the algorithms parameters (train again if the accuracy is not sufficient).
+        p Let us test the network by giving it 2 data patterns from the generalization set (the trained network never encountered these) and see if it classifies them as expected.
+        span
+          button Classify malignant
+        span
+          button Classify benign
+        br
+        #results
+        br
+
+.row.divider.divider--blue
+
+.row.steps
+  .grid--gutter
+    .content
+      .step-header
+        h1 Step 4: Share the love
+      .step-content
+        p To tell the truth, this is a very easy problem for AI to solve. In fact, it can be solved with statistical methods alone! With that being said, cancer is a destructive disease that has affected many people I hold dear. If we can solve the problem of cancer diagnosis that affects so many people, what other problems can be solved with machine learning? I hope you were inspired by this demonstration, and I hope you will share it and spread the love. Who knows what we can do with machine learning if we have the right data!
+
+.row.divider.divider--emerald
+
+
+/ Footer
+.row.main-footer
+  .grid--gutter
+    .content
+      .footer-left
+        h1 THANKS!
+      .footer-right
+        p I appreciate you stopping by and spending the time. Thank you <a href="http://platform45.com">Platform45</a> for helping me achieve my goals and supporting me during all of this. If you're interested, follow up with me <a href="http://simonvandyk.co.za">here</a>. I'd be happy to chat. Cheers, Simon van Dyk.
