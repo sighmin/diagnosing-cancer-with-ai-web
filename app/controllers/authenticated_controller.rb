@@ -1,9 +1,3 @@
 class AuthenticatedController < ApplicationController
-  before_filter :authenticate!
-
-  private
-
-  def authenticate!
-    Rails.logger.debug "TODO: authenticate me!"
-  end
+  http_basic_authenticate_with name: "rubyfuza", password: "demo"
 end
