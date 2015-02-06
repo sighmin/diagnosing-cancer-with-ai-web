@@ -11,7 +11,8 @@ GIT
 
 GIT
   remote: git://github.com/sighmin/diagnosing-cancer-with-ai.git
-  revision: a50038e563fd8754e0528bf86dd6bfce43d9df24
+  revision: 7fc05632a4d667ab1054420f6d2eee2dc52277c6
+  ref: 7fc05632a4d667ab1054420f6d2eee2dc52277c6
   specs:
     intelligence (0.0.3)
       activesupport

@@ -18,7 +18,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sucker_punch'
-gem 'intelligence', github: 'sighmin/diagnosing-cancer-with-ai'
+gem 'intelligence', github: 'sighmin/diagnosing-cancer-with-ai', ref: '7fc05632a4d667ab1054420f6d2eee2dc52277c6'
 
 # Assets
 gem 'font-awesome-rails'
