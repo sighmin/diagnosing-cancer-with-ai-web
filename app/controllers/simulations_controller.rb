@@ -1,4 +1,4 @@
-class SimulationsController < ApplicationController
+class SimulationsController < AuthenticatedController
 
   def create
     new_simulation = Simulation.new(params[:simulation])
