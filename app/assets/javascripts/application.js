@@ -80,7 +80,8 @@ $(document).ready(function() {
 
   var getUserClassification = function(context) {
     var $context = $(context);
-    var measurements = $('.user-measurements').val();
+    var $input = $('.user-measurements');
+    var measurements = $input.val();
     var simulationId = $($('.classify')[0]).data('simulation-id');
     var uri = "/simulations/" + simulationId + "/classify_with_pretrained?measurements=" + measurements;
     console.log("URL", uri);
@@ -92,7 +93,9 @@ $(document).ready(function() {
       }, 10000);
     }, function(xhr) {
       console.log("ERRORED in getClassification", xhr);
-      $context.html('Classify measurements')
+      alert("Not a valid measurement");
+      $input.val("");
+      $context.html('Classify measurements');
     });
   };
 
