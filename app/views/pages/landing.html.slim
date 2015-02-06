@@ -33,6 +33,21 @@
         h1 Step 1: Data data data
       .step-content
         p The first thing you need for machine learning is a data set. The data set I used can be found <a href="https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Original)">here</a> on the popular UCI machine learning repository. The data consists of a set of measurements of digital images of various peoples breast tissue. A digital image is taken of an FNA (fine needle aspirate) and various measurements taken of the cells. Once you have the data, you split it into a training set (~60%) and a generalization set (~40%).
+        p The data consists of real medical readings taken from a digital image of a piece of sample tissue (a fine needle aspirate, "FNA"). Each number in the comma separated lists below correspond to a specific attribute of the tissue measured from the image of this small piece of sample tissue.
+        p The attributes consist of 10 measurements made on 3 cells, resulting in 30 attributes.
+        ul.measurement-attributes
+          li Radius (mean of distances from center to points on the perimeter)
+          li Texture (standard deviation of gray-scale values)
+          li Perimeter
+          li Area
+          li Smoothness (local variation in radius lengths)
+          li Compactness (perimeter^2 / area - 1.0)
+          li Concavity (severity of concave portions of the contour)
+          li Concave points (number of concave portions of the contour)
+          li Symmetry
+          li Fractal dimension ("coastline approximation" - 1)
+        br
+        br
         p Here are some examples of measurements from the data set:
         br
         h2 Malignant measurements
