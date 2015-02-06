@@ -22,5 +22,8 @@ module IntelligenceWeb
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # Set sucker punch as in process threaded background processing adapter for active job
+    config.active_job.queue_adapter = :sucker_punch
   end
 end
