@@ -9,6 +9,16 @@ GIT
       sprockets-rails (>= 2.0, < 4.0)
       tilt (~> 1.1)
 
+GIT
+  remote: git://github.com/sighmin/diagnosing-cancer-with-ai.git
+  revision: 7fc05632a4d667ab1054420f6d2eee2dc52277c6
+  ref: 7fc05632a4d667ab1054420f6d2eee2dc52277c6
+  specs:
+    intelligence (0.0.3)
+      activesupport
+      colorize
+      sinatra
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -72,6 +82,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.0)
+    colorize (0.7.5)
     columnize (0.9.0)
     daemons (1.1.9)
     debug_inspector (0.0.2)
@@ -120,6 +131,8 @@ GEM
     pry-rails (0.3.2)
       pry (>= 0.9.10)
     rack (1.6.0)
+    rack-protection (1.5.3)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.0)
@@ -175,6 +188,10 @@ GEM
       rdoc (~> 4.0)
     shoulda-matchers (2.7.0)
       activesupport (>= 3.0.0)
+    sinatra (1.4.5)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
     slim (3.0.1)
       temple (~> 0.7.3)
       tilt (>= 1.3.3, < 2.1)
@@ -221,6 +238,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   font-awesome-rails
   foreman
+  intelligence!
   jbuilder (~> 2.0)
   jquery-rails
   neat

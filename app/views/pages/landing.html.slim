@@ -32,7 +32,20 @@
       .step-header
         h1 Step 1: Data data data
       .step-content
-        p The first thing you need for machine learning is a data set. The data set I used can be found <a href="">here</a> on the popular UCI machine learning repository. The data consists of a set of measurements of digital images of various peoples breast tissue. A digital image is taken of an FNA (fine needle aspirate) and various measurements taken of the cells. Once you have the data, you split it into a training set (~60%) and a generalization set (~40%).
+        p The first thing you need for machine learning is a data set. The data set I used can be found <a href="https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Original)">here</a> on the popular UCI machine learning repository. The data consists of a set of measurements of digital images of various peoples breast tissue. A digital image is taken of an FNA (fine needle aspirate) and various measurements taken of the cells. Once you have the data, you split it into a training set (~60%) and a generalization set (~40%).
+        p Here are some examples of measurements from the data set:
+        br
+        h2 Malignant measurements
+        ul.measurements
+          li 17.99,10.38,122.8,1001,0.1184,0.2776,0.3001,0.1471,0.2419,0.07871,1.095,0.9053,8.589,153.4,0.006399,0.04904,0.05373,0.01587,0.03003,0.006193,25.38,17.33,184.6,2019,0.1622,0.6656,0.7119,0.2654,0.4601,0.1189
+          li 13.17,18.66,85.98,534.6,0.1158,0.1231,0.1226,0.0734,0.2128,0.06777,0.2871,0.8937,1.897,24.25,0.006532,0.02336,0.02905,0.01215,0.01743,0.003643,15.67,27.95,102.8,759.4,0.1786,0.4166,0.5006,0.2088,0.39,0.1179
+          li 18.65,17.6,123.7,1076,0.1099,0.1686,0.1974,0.1009,0.1907,0.06049,0.6289,0.6633,4.293,71.56,0.006294,0.03994,0.05554,0.01695,0.02428,0.003535,22.82,21.32,150.6,1567,0.1679,0.509,0.7345,0.2378,0.3799,0.09185
+        br
+        h2 Benign measurements
+        ul.measurements
+          li 7.76,24.54,47.92,181,0.05263,0.04362,0,0,0.1587,0.05884,0.3857,1.428,2.548,19.15,0.007189,0.00466,0,0,0.02676,0.002783,9.456,30.37,59.16,268.6,0.08996,0.06444,0,0,0.2871,0.07039
+          li 12.05,14.63,78.04,449.3,0.1031,0.09092,0.06592,0.02749,0.1675,0.06043,0.2636,0.7294,1.848,19.87,0.005488,0.01427,0.02322,0.00566,0.01428,0.002422,13.76,20.7,89.88,582.6,0.1494,0.2156,0.305,0.06548,0.2747,0.08301
+          li 13.03,18.42,82.61,523.8,0.08983,0.03766,0.02562,0.02923,0.1467,0.05863,0.1839,2.342,1.17,14.16,0.004352,0.004899,0.01343,0.01164,0.02671,0.001777,13.3,22.81,84.46,545.9,0.09701,0.04619,0.04833,0.05013,0.1987,0.06169
 
 .row.divider.divider--alizarin
 
@@ -44,7 +57,7 @@
       .step-content
         p The training set is used along with a training algorithm in order to correct the neural networks classification during training. By doing so, teaching it to classify the mass as either malignant or benign. I'm training the neural network with a particle swarm optimizer, a clever global search algorithm.
         p Let us train the network now...
-        button Train
+        button#train Train
         br
 
 .row.divider.divider--amethyst
@@ -56,14 +69,22 @@
         h1 Step 3: Evaluation
       .step-content
         p Once the training is complete it will show the trained networks average classification accuracy. This may vary greatly because I have not tweaked the algorithms parameters (train again if the accuracy is not sufficient).
-        p Let us test the network by giving it 2 data patterns from the generalization set (the trained network never encountered these) and see if it classifies them as expected.
-        span
-          button Classify malignant
-        span
-          button Classify benign
+        p Let us test the trained network by giving it 2 data patterns from the generalization set (the trained network never encountered these) and see if it classifies them as expected.
         br
-        #results
+        p We expect the following unseen data to classify as Malignant.
+        p.measurements 17.99,10.38,122.8,1001,0.1184,0.2776,0.3001,0.1471,0.2419,0.07871,1.095,0.9053,8.589,153.4,0.006399,0.04904,0.05373,0.01587,0.03003,0.006193,25.38,17.33,184.6,2019,0.1622,0.6656,0.7119,0.2654,0.4601,0.1189
+        button.classify data-measurements="17.99,10.38,122.8,1001,0.1184,0.2776,0.3001,0.1471,0.2419,0.07871,1.095,0.9053,8.589,153.4,0.006399,0.04904,0.05373,0.01587,0.03003,0.006193,25.38,17.33,184.6,2019,0.1622,0.6656,0.7119,0.2654,0.4601,0.1189" Classify example
         br
+        br
+        p We expect the following unseen data to classify as Benign.
+        p.measurements 7.76,24.54,47.92,181,0.05263,0.04362,0,0,0.1587,0.05884,0.3857,1.428,2.548,19.15,0.007189,0.00466,0,0,0.02676,0.002783,9.456,30.37,59.16,268.6,0.08996,0.06444,0,0,0.2871,0.07039
+        button.classify data-measurements="7.76,24.54,47.92,181,0.05263,0.04362,0,0,0.1587,0.05884,0.3857,1.428,2.548,19.15,0.007189,0.00466,0,0,0.02676,0.002783,9.456,30.37,59.16,268.6,0.08996,0.06444,0,0,0.2871,0.07039" Classify example
+        br
+        br
+        p You can submit your readings here to be classified with the pretrained neural network.
+        input.user-measurements type='text'
+        button.user-classify Classify measurements
+
 
 .row.divider.divider--blue
 
