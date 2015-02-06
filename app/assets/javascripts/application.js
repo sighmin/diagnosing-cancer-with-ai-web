@@ -78,11 +78,33 @@ $(document).ready(function() {
     });
   };
 
+  var getUserClassification = function(context) {
+    var $context = $(context);
+    var measurements = $('.user-measurements').val();
+    var simulationId = $($('.classify')[0]).data('simulation-id');
+    var uri = "/simulations/" + simulationId + "/classify_with_pretrained?measurements=" + measurements;
+    console.log("URL", uri);
+    $.get(uri).then(function(data) {
+      console.log("CLASSIFICATION", data.classification);
+      $context.html(data.classification + "!")
+      setTimeout(function() {
+        $context.html('Classify readings')
+      }, 10000);
+    }, function(xhr) {
+      console.log("ERRORED in getClassification", xhr);
+      $context.html('Classify measurements')
+    });
+  };
+
   $("#train").on("click", function() {
     createSimulation();
   });
 
   $('.classify').on("click", function() {
     getClassification(this);
+  });
+
+  $('.user-classify').on("click", function() {
+    getUserClassification(this);
   });
 });
